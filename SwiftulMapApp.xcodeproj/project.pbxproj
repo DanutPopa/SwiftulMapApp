@@ -15,6 +15,7 @@
 		0C37F54B2D43CDED00CBE837 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C37F54A2D43CDED00CBE837 /* ContentView.swift */; };
 		0C37F5502D43CDF000CBE837 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C37F54F2D43CDF000CBE837 /* Preview Assets.xcassets */; };
 		0C37F5572D43D1AF00CBE837 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C37F5562D43D1AF00CBE837 /* Assets.xcassets */; };
+		0CE528E42D45433F0026806A /* LocationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE528E32D45433F0026806A /* LocationsListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		0C37F54A2D43CDED00CBE837 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0C37F54F2D43CDF000CBE837 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0C37F5562D43D1AF00CBE837 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0CE528E32D45433F0026806A /* LocationsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				0C0F4BAF2D43F27500AF382E /* LocationsView.swift */,
+				0CE528E32D45433F0026806A /* LocationsListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C0F4BAE2D43DAF600AF382E /* LocationsDataService.swift in Sources */,
+				0CE528E42D45433F0026806A /* LocationsListView.swift in Sources */,
 				0C0F4BB22D44038B00AF382E /* LocationsViewModel.swift in Sources */,
 				0C37F54B2D43CDED00CBE837 /* ContentView.swift in Sources */,
 				0C0F4BB02D43F27500AF382E /* LocationsView.swift in Sources */,

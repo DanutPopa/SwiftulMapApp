@@ -21,9 +21,12 @@ class LocationsViewModel: ObservableObject {
         }
     }
     
+    // Current position on map
     @Published var mapPosition = MapCameraPosition.region(MKCoordinateRegion())
-    
     let mapSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+    
+    // Show list of locations
+    @Published var showLocationsList = false
     
     init() {
         let locations = LocationsDataService.locations
@@ -38,6 +41,19 @@ class LocationsViewModel: ObservableObject {
             mapPosition = MapCameraPosition.region(MKCoordinateRegion(
                 center: location.coordinates,
                 span: mapSpan))
+        }
+    }
+    
+    func toggleLocationsList() {
+        withAnimation(.easeInOut) {
+            showLocationsList.toggle()
+        }
+    }
+    
+    func showNextLocation(location: Location) {
+        withAnimation(.easeInOut) {
+            mapLocation = location
+            showLocationsList = false
         }
     }
 }
