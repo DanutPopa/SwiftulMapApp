@@ -9,20 +9,35 @@ import SwiftUI
 
 struct LocationsListView: View {
     @EnvironmentObject private var vm: LocationsViewModel
+    @State private var searchText = ""
     
-    var body: some View {
-        List {
-            ForEach(vm.locations) { location in
-                Button {
-                    vm.showNextLocation(location: location)
-                } label: {
-                    listRowView(location: location)
-                }
-                .padding(.vertical, 4)
-                .listRowBackground(Color.clear)
+    var filteredLocations: [Location] {
+        if searchText.isEmpty {
+            vm.locations
+        } else {
+            vm.locations.filter { location in
+                location.name.localizedStandardContains(searchText)
             }
         }
-        .listStyle(.plain)
+    }
+    
+    var body: some View {
+        NavigationStack {
+            List {
+                ForEach(filteredLocations) { location in
+                    Button {
+                        vm.showNextLocation(location: location)
+                    } label: {
+                        listRowView(location: location)
+                    }
+                    .padding(.vertical, 4)
+                    .listRowBackground(Color.clear)
+                }
+            }
+            .listStyle(.plain)
+            .searchable(text: $searchText, prompt: "Search locations")
+            .navigationTitle("Locations")
+        }
     }
 }
 
